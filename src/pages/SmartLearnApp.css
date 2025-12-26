@@ -1,0 +1,1127 @@
+/* SmartLearnApp.css */
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --accent-color: #9b59b6;
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --warning-color: #f39c12;
+  --danger-color: #e74c3c;
+  --success-color: #27ae60;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.smartlearn-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+
+/* الشريط العلوي */
+.app-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-btec {
+  background: white;
+  color: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 1.2rem;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.2rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: white;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-level, .user-points {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--secondary-color);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.user-points {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+}
+
+.points-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* قسم البداية */
+.landing-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.welcome-message h2 {
+  color: var(--dark-color);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.welcome-message p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.motto {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 2rem auto;
+  max-width: 600px;
+  box-shadow: var(--box-shadow);
+}
+
+.motto h3 {
+  font-size: 1.5rem;
+}
+
+.quick-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.interactive-background {
+  position: relative;
+  height: 300px;
+  margin-top: 3rem;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.floating-cards {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: float 3s infinite ease-in-out;
+}
+
+.floating-card:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-card:nth-child(2) {
+  top: 40%;
+  left: 50%;
+  animation-delay: 0.5s;
+}
+
+.floating-card:nth-child(3) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 1s;
+}
+
+.floating-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* الأقسام العامة */
+.section-title {
+  color: var(--dark-color);
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+/* المهارات */
+.skills-grid, .projects-grid, .challenges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card, .project-card, .challenge-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.skill-card:hover, .project-card:hover, .challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card.active {
+  border-color: var(--primary-color);
+}
+
+.skill-icon, .project-type, .challenge-type {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.skill-title, .project-title, .challenge-title {
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.skill-description, .project-description, .challenge-description {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.skill-meta, .project-meta, .challenge-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.skill-difficulty, .skill-btec, .project-btec, .challenge-points {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.skill-difficulty {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.skill-btec, .project-btec {
+  background: var(--primary-color);
+  color: white;
+}
+
+.challenge-points {
+  background: var(--warning-color);
+  color: white;
+}
+
+.completed {
+  border-left: 5px solid var(--success-color);
+}
+
+.completion-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--success-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* التمارين */
+.exercise-container {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.exercise-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.close-exercise {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.exercise-content h4 {
+  color: var(--dark-color);
+  margin-bottom: 0.5rem;
+}
+
+.matching-exercise, .fill-blanks-exercise {
+  margin: 1.5rem 0;
+}
+
+.matching-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.matching-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--light-color);
+  border-radius: var(--border-radius);
+}
+
+.matching-word {
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: var(--border-radius);
+  cursor: move;
+}
+
+.sentence {
+  font-size: 1.2rem;
+  padding: 1rem;
+  background: var(--light-color);
+  border-radius: var(--border-radius);
+}
+
+.blank-select {
+  margin: 0 0.5rem;
+  padding: 0.3rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.exercise-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.record-audio, .submit-exercise, .submit-project, .complete-challenge {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.record-audio {
+  background: var(--light-color);
+  color: var(--dark-color);
+}
+
+.submit-exercise, .submit-project, .complete-challenge {
+  background: var(--primary-color);
+  color: white;
+}
+
+.record-audio:hover, .submit-exercise:hover, .submit-project:hover, .complete-challenge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.exercise-result {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.exercise-result.pass {
+  background: rgba(46, 204, 113, 0.1);
+  border: 2px solid var(--success-color);
+}
+
+.exercise-result.merit {
+  background: rgba(52, 152, 219, 0.1);
+  border: 2px solid var(--primary-color);
+}
+
+.exercise-result.distinction {
+  background: rgba(155, 89, 182, 0.1);
+  border: 2px solid var(--accent-color);
+}
+
+.result-stars {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.continue-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* المشاريع */
+.project-modal, .challenge-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  border-radius: var(--border-radius);
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  color: var(--dark-color);
+}
+
+.modal-header button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.submission-options {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.submission-option h4 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.submission-option textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  resize: vertical;
+}
+
+.audio-btn, .upload-btn {
+  width: 100%;
+  padding: 1rem;
+  background: var(--light-color);
+  border: 2px dashed #ddd;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.audio-btn:hover, .upload-btn:hover {
+  background: #e8e8e8;
+}
+
+.ai-feedback-preview {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  margin: 1.5rem 0;
+}
+
+.ai-feedback-preview ul {
+  margin-right: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.modal-footer {
+  padding: 1.5rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+}
+
+/* التحديات */
+.streak-counter {
+  text-align: center;
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+}
+
+.streak-value {
+  font-weight: bold;
+  color: var(--warning-color);
+}
+
+.challenge-success {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(46, 204, 113, 0.1);
+  border-radius: var(--border-radius);
+  margin: 1rem 0;
+}
+
+/* اختبار الذكاء */
+.test-container {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+.test-progress {
+  margin-bottom: 2rem;
+}
+
+.progress-text {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  color: #666;
+}
+
+.question-card {
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+}
+
+.question-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.question-type {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.question-text {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+}
+
+.question-options {
+  display: grid;
+  gap: 1rem;
+}
+
+.option-btn {
+  padding: 1rem;
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: right;
+  font-size: 1rem;
+}
+
+.option-btn:hover {
+  border-color: var(--primary-color);
+  transform: translateX(-5px);
+}
+
+.test-results {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  text-align: center;
+}
+
+.results-score {
+  margin: 2rem 0;
+}
+
+.score-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.score-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.score-label {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.results-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+.result-item {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+}
+
+.result-value.level {
+  font-weight: bold;
+  color: var(--success-color);
+}
+
+.ai-feedback {
+  text-align: right;
+  margin: 2rem 0;
+}
+
+.feedback-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.strengths, .improvements {
+  background: white;
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.strengths h5 {
+  color: var(--success-color);
+  margin-bottom: 0.5rem;
+}
+
+.improvements h5 {
+  color: var(--warning-color);
+  margin-bottom: 0.5rem;
+}
+
+.strengths ul, .improvements ul {
+  margin-right: 1.5rem;
+}
+
+.recommended-exercises {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.exercise-tag {
+  background: var(--light-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.retake-test {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.retake-test:hover {
+  background: #2980b9;
+  transform: translateY(-2px);
+}
+
+/* لوحة التحكم */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stats-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+
+.stats-card h3 {
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+.skills-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skill-name {
+  flex: 1;
+  font-weight: bold;
+}
+
+.skill-progress-bar {
+  flex: 2;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  background: var(--primary-color);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.skill-status {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.badges-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.no-badges {
+  text-align: center;
+  color: #666;
+  padding: 2rem 1rem;
+}
+
+.btec-levels-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btec-level {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: var(--border-radius);
+}
+
+.share-section {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+}
+
+.share-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.share-btn {
+  padding: 0.8rem 1.5rem;
+  background: var(--light-color);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.share-btn:hover {
+  background: #e8e8e8;
+}
+
+/* التذييل */
+.app-footer {
+  background: var(--dark-color);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.footer-link {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer-link:hover {
+  color: var(--secondary-color);
+}
+
+/* إشعار التحدي اليومي */
+.daily-notification {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 400px;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.notification-icon {
+  font-size: 2rem;
+}
+
+.notification-text h4 {
+  color: var(--dark-color);
+  margin-bottom: 0.3rem;
+}
+
+.notification-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-weight: bold;
+  transition: var(--transition);
+  margin-right: auto;
+}
+
+.notification-btn:hover {
+  background: #27ae60;
+}
+
+/* الرسوم المتحركة */
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(100px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* التجاوب مع الشاشات المختلفة */
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 992px) {
+  .app-header {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .main-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .feedback-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid, .projects-grid, .challenges-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .quick-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .daily-notification {
+    left: 1rem;
+    right: 1rem;
+    max-width: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .skills-grid, .projects-grid, .challenges-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nav-btn .nav-text {
+    display: none;
+  }
+  
+  .nav-btn {
+    padding: 0.7rem;
+  }
+  
+  .welcome-message h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+}
